@@ -1,0 +1,35 @@
+<br><br><br>
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-sm-3"></div>
+				<div class = "col-sm-6"  style = "background-color: #451768; padding: 15px;">
+					<h1 style = "color: #e19999">Sign Up</h1>
+					
+					<form action = "/register" method = "post">
+						User Name:
+						<input type = "text" id = "name" name = "name" placeholder = "Enter user name" class = "col-sm-12" value="<%= typeof name != 'undefined' ? name : '' %>" required />
+						<br><br>
+						
+						Email:
+						<input type = "email" id = "email" name = "email" placeholder = "Enter Email" class = "col-sm-12" value="<%= typeof email != 'undefined' ? email : '' %>" required />
+						<br><br>
+						
+						Password (at least six digits):
+						<input type = "password" id = "password" name = "password" placeholder = "Enter atleast six digit password" class = "col-sm-12" value="<%= typeof password != 'undefined' ? password : '' %>" required />
+						<br><br>
+						
+						Confirm Password:
+						<input type = "password" id = "password2" name = "password2" placeholder = "Confirm password" class = "col-sm-12" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" required />
+						<br>
+						
+						<input type = "radio" id = "userType" name = "userType" value = "Traveller" required /> Traveler &nbsp;&nbsp;
+						<input type = "radio" id = "userType" name = "userType" value = "Guest House" required /> Guest House<br><br>
+						
+						<input type = "submit" value = "Create Account" class = "button col-sm-12" style = "height: 30px; margin: 0px; background-color: #6683ea"/><br><br>
+						<button class = " button col-sm-12" type="button" onclick="window.location.href='/login'">Cancel</button>
+					</form>
+					
+				</div>
+				<div class = "col-sm-3"></div>
+			</div>
+		</div>
