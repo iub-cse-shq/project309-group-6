@@ -1,3 +1,4 @@
+// To open user table in database
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({

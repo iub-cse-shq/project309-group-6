@@ -3,8 +3,12 @@ const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
+const passport = require('passport');
 
 const app = express()
+
+// Passport Config fetch from config
+require('./config/passport')(passport);
 
 //Connect To Mongo
 mongoose.connect('mongodb://localhost:27017/travelTart',{
@@ -38,6 +42,10 @@ app.use(
     })
   );
 
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Connect flash
 app.use(flash());
 
@@ -52,5 +60,28 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/users'));
+
+app.post("/add",(req,res)=>{
+  var hotel = req.body.hotel;
+  var location = req.body.location;
+  var features = req.body.features;
+  
+  var data = {
+      "hotel": hotel,
+      "location" : location,
+      "features" : features,
+  }
+
+  db.collection('Hotels').insertOne(data,(err,collection)=>{
+      if(err){
+          throw err;
+      }
+      console.log("Record Inserted Successfully");
+  });
+
+  return res.redirect('/dashboard')
+
+})
+
 
 app.listen(3000)
