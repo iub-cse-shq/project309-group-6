@@ -1,0 +1,112 @@
+<body style = " background-image:linear-gradient(  #6A93C6, #451768);">
+    <nav class="navbar navbar-toggleable-sm navbar-light" style = "background-color: #451768;">
+       
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style = "color:white" href="/logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class = "container">
+        <div align = "center" style = "padding-top: 200px;">
+             <!-- Button trigger modal -->
+            <button type="button" data-toggle="modal" data-target="#exampleModal" data-aos = "zoom-in">Add</button>
+        </div>
+       
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style = "background-color: #451768;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Hotel</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action = "/add" method = "post">
+                            <table align = "center" style = "border: none">
+                                <tr>
+                                    <td style = "border: none"><label for="hotel">Hotel Name</label></td>
+                                    <td style = "border: none"><input type="text" id="hotel" name="hotel" required></td>
+                                </tr>
+                                <tr>
+                                    <td style = "border: none"><label for="location">Location</label></td>
+                                    <td style = "border: none"><input type="text" id="location" name="location" required></td>
+                                </tr>
+                                <tr>
+                                    <td style = "border: none"><label for="features">Features</label></td>
+                                    <td style = "border: none"><textarea id="features" name="features" required></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td style = "border: none; text-align: right;" colspan = "2" ><input type = "Submit" value = "Add"  /></td>
+                                </tr>
+                            </table>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-sm-4" data-aos="fade-up">
+                <div class = "hotel">
+                    <img src = "images/1.jpg">
+                    <h4 align = "center">Royal Tulip Luxary Hotel</h4>
+                    <p align = "center">Cox&apos;s Bangladesh</p>
+                    
+                    <ul>
+                        <li>Beach View</li>
+                        <li>Pool</li>
+                        <li>Free Breakfast</li>
+                    </ul>
+                 </div>
+            </div>
+            <div class = "col-sm-4" data-aos="fade-up">
+                <div class = "hotel">
+                    <img src = "images/2.jpg">
+                    <h4 align = "center">Royal Tulip Luxary Hotel</h4>
+                    <p align = "center">Cox&apos;s Bangladesh</p>
+                    
+                    <ul>
+                        <li>Beach View</li>
+                        <li>Pool</li>
+                        <li>Free Breakfast</li>
+                    </ul>
+                 </div>
+            </div>
+            <div class = "col-sm-4" data-aos="fade-up">
+                <div class = "hotel">
+                    <img src = "images/3.jpg">
+                    <h4 align = "center">Royal Tulip Luxary Hotel</h4>
+                    <p align = "center">Cox&apos;s Bangladesh</p>
+                    
+                    <ul>
+                        <li>Beach View</li>
+                        <li>Pool</li>
+                        <li>Free Breakfast</li>
+                    </ul>
+                 </div>
+            </div>
+
+            <% Hotels.forEach(function(hotels){ %>
+            <div class = "col-sm-4" data-aos="fade-up">
+                <div class = "hotel">
+                    <img src = "images/3.jpg">
+                    <h4 align = "center"><%= hotels.hotel %></h4>
+                    <p align = "center"><%= hotels.location %></p>
+                    
+                    <%= hotels.features %>
+                 </div>
+            </div>
+            <%}); %>
+
+        </div>
+    </div>
+</body>
