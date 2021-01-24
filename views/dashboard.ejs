@@ -1,0 +1,73 @@
+<body style = " background-image:linear-gradient(  #6A93C6, #451768);">
+    <nav class="navbar navbar-toggleable-sm navbar-light" style = "background-color: #451768;">
+     
+          
+    
+        
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style = "color:white" href="/logout">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class = "container">
+        <div class = "row" style="padding-top: 200px;">
+            <div class = "col-sm-4">
+                <div class = "hotel">
+                    <img src = "images/1.jpg">
+                    <h4 align = "center">Royal Tulip Luxary Hotel</h4>
+                    <p align = "center">Cox&apos;s Bangladesh</p>
+                    
+                    <ul>
+                        <li>Beach View</li>
+                        <li>Pool</li>
+                        <li>Free Breakfast</li>
+                    </ul>
+                 </div>
+            </div>
+            <div class = "col-sm-4">
+                <div class = "hotel">
+                    <img src = "images/2.jpg">
+                    <h4 align = "center">Royal Tulip Luxary Hotel</h4>
+                    <p align = "center">Cox&apos;s Bangladesh</p>
+                    
+                    <ul>
+                        <li>Beach View</li>
+                        <li>Pool</li>
+                        <li>Free Breakfast</li>
+                    </ul>
+                 </div>
+            </div>
+            <div class = "col-sm-4">
+                <div class = "hotel">
+                    <img src = "images/3.jpg">
+                    <h4 align = "center">Royal Tulip Luxary Hotel</h4>
+                    <p align = "center">Cox&apos;s Bangladesh</p>
+                    
+                    <ul>
+                        <li>Beach View</li>
+                        <li>Pool</li>
+                        <li>Free Breakfast</li>
+                    </ul>
+                 </div>
+            </div>
+            <% Hotels.forEach(function(hotels){ %>
+                <div class = "col-sm-4" data-aos="fade-up">
+                    <div class = "hotel">
+                        <img src = "images/3.jpg">
+                        <h4 align = "center"><%= hotels.hotel %></h4>
+                        <p align = "center"><%= hotels.location %></p>
+                        
+                        <%= hotels.features %>
+                     </div>
+                </div>
+                <%}); %>
+        </div>
+    </div>
+</body>
